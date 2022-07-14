@@ -1,0 +1,7 @@
+numpy
+torch==1.5.1
+datetime
+matplotlib
+termcolor
+pyyaml
+tensorboard
