@@ -1,6 +1,3 @@
-################ Lispy: Scheme Interpreter in Python
-
-## (c) Peter Norvig, 2010-16; See http://norvig.com/lispy.html
 
 from __future__ import division
 import math
