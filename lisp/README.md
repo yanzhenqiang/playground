@@ -1,11 +1,15 @@
-# Project code
+# Lisp in 99 lines of C and how to write one yourself
 
-- [tinylisp.c](tinylisp.c) Lisp in 99 lines of C
-- [tinylisp-opt.c](tinylisp-opt.c) optimized version for speed and reduced memory use
-- [lisp850.c](lisp850.c) Lisp in 99 lines of C for the Sharp PC-G850 with BCD boxing
-- [lisp850-opt.c](lisp850-opt.c) optimized version for speed and reduced memory use
-- [common.lisp](common.lisp) common Lisp functions defined in tiny Lisp itself
-- [list.lisp](list.lisp) list functions library
-- [math.lisp](math.lisp) some Lisp math functions
+## Project code
 
-Written in a lisp-like functional style of structured C, lines are 55 columns wide on average and never wider than 120 columns for convenient editing.
+To compile tinylisp:
+~~~
+$ cc -o tinylisp tinylisp-opt.c
+~~~
+The number of cells allocated is N=1024 by default, which is only 8K of memory.  To increase memory size, increase the value of N in the code.  Then recompile tinylisp.
+
+To install one or more optional Lisp libraries to run tinylisp, use Linux/Unix `cat`:
+~~~
+cat common.lisp list.lisp math.lisp | ./tinylisp
+~~~
+But before you can do this, change the `look` function to reopen /dev/tty as explained in Section 7 of the [article](tinylisp.pdf).
